@@ -12,7 +12,6 @@ import { StepBulkUnsubscribe } from "@/app/(app)/[emailAccountId]/onboarding/Ste
 import { StepLabels } from "@/app/(app)/[emailAccountId]/onboarding/StepLabels";
 import { usePersona } from "@/hooks/usePersona";
 import { analyzePersonaAction } from "@/utils/actions/email-account";
-import { StepFeatures } from "@/app/(app)/[emailAccountId]/onboarding/StepFeatures";
 import { StepDraft } from "@/app/(app)/[emailAccountId]/onboarding/StepDraft";
 import { StepCustomRules } from "@/app/(app)/[emailAccountId]/onboarding/StepCustomRules";
 import { StepInboxProcessed } from "@/app/(app)/[emailAccountId]/onboarding/StepInboxProcessed";
@@ -68,7 +67,6 @@ export function OnboardingContent({ step }: OnboardingContentProps) {
       ? undefined
       : () => <StepDraftReplies onNext={onNext} />,
     [STEP_KEYS.BULK_UNSUBSCRIBE]: () => <StepBulkUnsubscribe onNext={onNext} />,
-    [STEP_KEYS.FEATURES]: () => <StepFeatures onNext={onNext} />,
     [STEP_KEYS.WHO]: () => (
       <StepWho
         initialRole={data?.role || data?.personaAnalysis?.persona}
